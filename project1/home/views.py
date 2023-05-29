@@ -84,6 +84,7 @@ def studentinfo(request):
         'stu_count':stu_count,
         'myFilter':myFilter
         }
+    return render(request, 'home/studetails.html',context )
     
 def update(request, _id_=None):
     stud = Student.objects.get(id=_id_)
