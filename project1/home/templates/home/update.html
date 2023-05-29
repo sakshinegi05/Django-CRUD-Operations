@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Update</title>
+<head>{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/update.css' %}">
+</head>
+<body>
+
+	<h1>Update Student Credentials</h1>
+	<div class="reg">
+		<div class="form">
+			<form action="{{ member.id }}" method="post" class="registration-form">
+			{% csrf_token %}
+			StudentID:
+			<p><input name="studentID" value="{{ stu.studentID }}">
+			
+			Name:
+			<p><input name="name" value="{{ stu.name }}">
+			
+			Email:
+			<p><input name="email" value="{{ stu.email }}">
+			
+			Password:
+			<p><input name="password" value="{{ stu.password }}">
+			
+			<p><button type="submit" value="Submit">Save</button>
+			</form>
+		</div>
+	</div>
+</body>

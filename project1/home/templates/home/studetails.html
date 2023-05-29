@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head><title>Student Details</title>
+<style>
+	th,td{
+		border:1px black solid;
+	}
+</style>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/database.css' %}">
+</head>
+<body>
+<div class="database">
+	<div class="form">
+	<form action="" method="post" class="registration-form">
+		{% csrf_token %}
+		<h1> Registration Details</h1>
+		<!-- showing all queryset -->	
+		   {% if stu %}
+			 <h3>Student credentials</h3>
+			 <div class="row">
+			  <div class="col-12">
+			   <div class="card card-body">
+				 <h5>Total Students</h5>
+				 {{ stu_count }}
+				 {{ myFilter.form }}
+		     	 <button type="submit"> Search </button>
+			  </div>
+			</div>
+		 </div>
+		<div class="container">
+			<p><table cellpadding='30' align='center' cellspacing='1'></p>
+				<thead>
+					<tr>
+					<th>ID</th>
+					<th>StudentID</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Password</th>
+					<th>Delete</th>
+					<th>Update</th>
+					</tr>
+				</thead>
+				
+				{% for st in stu %}
+					<tr>
+						<td>{{st.id}}</td>
+						<td>{{st.studentID}}</td>
+						<td>{{st.name}}</td>
+						<td>{{st.email}}</td>
+						<td>{{st.password}}</td>
+						<td><a href="{% url 'home:delete_student' st.id %}" onclick="alert('Are you sure you want to delete this record?)">
+							Delete</a></td>
+						<td><a href="{% url 'home:update_student' st.id %}">Update</a></td> 
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+			<p><a href='add/'{{st.id}}">Add Student</a></p>
+		{% else %}
+			<h3> No Data Found</h3>
+		{% endif %}
+</body>
+</html>

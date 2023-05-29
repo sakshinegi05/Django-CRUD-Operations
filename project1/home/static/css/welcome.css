@@ -1,0 +1,78 @@
+/*path -> static/css/login.css*/
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+.homepage {
+	width: 500px;
+	padding : 10% 0 0;
+	margin: auto;
+}
+
+.form{
+	position:relative;
+	z-index:1;
+	background:#FFFFFF;
+	max-width:360px;
+	margin: -100px 15px 100px;
+	padding:50px;
+	text-align:left;
+	box-shadow:0 0 20px rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0, 0, 0,.24);
+	}
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
+
+
+	
+
+	
+.form button{
+	font-family:"Lato", sans-serif;
+	text-transform:uppercase;
+	outline:0;
+	background:#3d3d3d;
+	width:100%;
+	border:0;
+	padding:15px;
+	color:#FFFFFF;
+	font-size: 14px;
+	
+	cursor:pointer;
+	}
+	
+.form button:hover, .form button:active, .form button:focus{
+	background:red;
+	}
+	
+.form.registration-form{
+	display:none;
+	}
+	
+
+body{
+	background: #3d3d3d;
+	font-family: "Lato", sans-serif;
+	}
+ 
